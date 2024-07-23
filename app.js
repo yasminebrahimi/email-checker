@@ -1,6 +1,3 @@
-
-
-
 // Define a constant for the registered email
 const registeredEmail = "user.test@gmail.com";
 
@@ -17,7 +14,7 @@ function checkEmailExist(email) {
     const username = signUpEmail.split("@")[0]; 
 
     // Check if the converted email matches the registered email
-    if (registeredEmail === signUpEmail) return "Email already exists!";
+    if (registeredEmail.toLowerCase() === signUpEmail) return "Email already exists!";
     
     // Return a welcome message with the extracted username
     return `Welcome!, this is your username ${username}`; 

@@ -10,14 +10,16 @@ function checkEmailExist(email) {
     // Convert the input email to lowercase and trim any whitespace
     const signUpEmail = email.toLowerCase().trim(); 
     
+    // Check if the converted email matches the registered email
+    if (registeredEmail.toLowerCase() === signUpEmail) {
+        return "Email already exists!";
+    }
+    
     // Extract the username part of the email (before the @ symbol)
     const username = signUpEmail.split("@")[0]; 
-
-    // Check if the converted email matches the registered email
-    if (registeredEmail.toLowerCase() === signUpEmail) return "Email already exists!";
     
     // Return a welcome message with the extracted username
-    return `Welcome!, this is your username ${username}`; 
+    return `Welcome!, this is your username ${username}`;
 }
 
 // Test the function with an email that matches the registered email
